@@ -1,4 +1,4 @@
-import 'package:breakfast/ReusableComponents/divider.dart';
+import 'package:breakfast/widgets/divider.dart';
 import 'package:flutter/material.dart';
 import 'package:breakfast/constances/Styes.dart';
 import 'package:breakfast/screens/detail_screen.dart';
@@ -67,7 +67,7 @@ class MenuCard extends StatelessWidget {
             ),
           ),
         ),
-        DividerLine(),
+        const DividerLine(),
       ],
     );
   }

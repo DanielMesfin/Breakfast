@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:breakfast/ReusableComponents/check_out_item.dart';
+import 'package:breakfast/widgets/check_out_item.dart';
 import 'package:breakfast/constances/Styes.dart';
-import 'package:breakfast/ReusableComponents/resueable_icon.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:breakfast/models/ordered_item.dart';
-import '../ReusableComponents/reusabelOptionButton.dart';
 import 'paymentScreen.dart';
 
 class CheckOutScreen extends StatefulWidget {
@@ -35,8 +34,8 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
         children: [
           ListView(
             children: [
-              const SizedBox(
-                height: 3,
+              SizedBox(
+                height: 3.h,
               ),
               Column(
                 children: widget.checkOutItem
@@ -47,8 +46,8 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                     )
                     .toList(),
               ),
-              const SizedBox(
-                height: 15,
+              SizedBox(
+                height: 15.h,
               ),
             ],
           ),
@@ -57,9 +56,9 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
             right: 10,
             bottom: 10,
             child: MaterialButton(
-              padding: const EdgeInsets.symmetric(
-                vertical: 15,
-                horizontal: 68,
+              padding: EdgeInsets.symmetric(
+                vertical: 15.h,
+                horizontal: 68.w,
               ),
               color: Styles.buttonBgColor,
               shape: RoundedRectangleBorder(
@@ -75,73 +74,12 @@ class _CheckOutScreenState extends State<CheckOutScreen> {
                     builder: (context) => const PaymentScreen(),
                   ),
                 );
-                // showDialog(
-                //     context: context,
-                //     builder: (context) {
-                //       return AlertDialog(
-                //         scrollable: true,
-                //         icon: const ReusableIcon(
-                //           iconData: Icons.payments_rounded,
-                //         ),
-                //         shadowColor: Colors.grey,
-                //         backgroundColor: Styles.cardBgColor,
-                //         elevation: 7.8,
-                //         title: const Text(
-                //           'Check Out All ',
-                //           textAlign: TextAlign.center,
-                //           style: TextStyle(color: Colors.white),
-                //         ),
-                //         actionsAlignment: MainAxisAlignment.center,
-                //         content: ListBody(
-                //           children: [
-                //             Text(
-                //               'Total cost of Your Item \$${Provider.of<OrderedItemData>(context).totalCostInCart().toStringAsFixed(2)}',
-                //               style: const TextStyle(color: Colors.white),
-                //               textAlign: TextAlign.center,
-                //             ),
-                //             Row(
-                //               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                //               children: [
-                //                 OptionButton(
-                //                   buttonColor: Colors.blueAccent,
-                //                   buttonLabel: 'ok',
-                //                   actionTakenOnCartItem: () {
-                //                     Provider.of<OrderedItemData>(context,
-                //                             listen: false)
-                //                         .checkOutAll();
-                //                     Navigator.pop(context);
-                //                     Navigator.push(
-                //                       context,
-                //                       MaterialPageRoute(
-                //                         builder: (context) =>
-                //                             const PaymentScreen(),
-                //                       ),
-                //                     );
-                //                   },
-                //                 ),
-                //                 OptionButton(
-                //                   buttonColor: Colors.redAccent,
-                //                   buttonLabel: 'Cancel',
-                //                   actionTakenOnCartItem: () =>
-                //                       Navigator.pop(context),
-                //                 )
-                //               ],
-                //             )
-                //           ],
-                //         ),
-                //         shape: const RoundedRectangleBorder(
-                //           borderRadius: BorderRadius.all(
-                //             Radius.circular(2.0),
-                //           ),
-                //         ),
-                //       );
-                //     });
               },
               child: Text(
                 "CheckOut \$${Provider.of<OrderedItemData>(context).totalCostInCart().toStringAsFixed(2)}",
-                style: const TextStyle(
+                style: TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 18.0,
+                  fontSize: 18.sp,
                 ),
               ),
             ),

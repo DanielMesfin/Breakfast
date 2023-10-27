@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:breakfast/constances/Styes.dart';
-import 'package:breakfast/ReusableComponents/resueable_icon.dart';
+import 'package:breakfast/widgets/resueable_icon.dart';
 
 class PersonalInformation extends StatefulWidget {
   const PersonalInformation({Key? key}) : super(key: key);

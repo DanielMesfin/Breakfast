@@ -12,7 +12,7 @@ class ReusableIcon extends StatelessWidget {
       child: Icon(
         iconData,
         size: 40,
-        color: Color.fromARGB(255, 17, 72, 40),
+        color: const Color.fromARGB(255, 17, 72, 40),
       ),
     );
   }

@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:breakfast/constances/Styes.dart';
-import 'package:breakfast/ReusableComponents/resueable_icon.dart';
+import 'package:breakfast/widgets/resueable_icon.dart';
 import 'package:breakfast/constances/get_size.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
-import '../ReusableComponents/oredered_item.dart';
+import '../widgets/oredered_item.dart';
 import 'package:provider/provider.dart';
 import 'package:breakfast/models/ordered_item.dart';
 import 'home_page.dart';
@@ -31,8 +32,8 @@ class _OrderScreenState extends State<OrderScreen> {
           children: [
             Container(
               padding: EdgeInsets.symmetric(
-                horizontal: GetSize.getScreenWidth(20),
-                vertical: GetSize.getScreenHeight(25),
+                horizontal: 20.w,
+                vertical: 25.h,
               ),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,

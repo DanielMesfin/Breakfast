@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:breakfast/constances/Styes.dart';
 import 'package:breakfast/models/menu_data.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:breakfast/models/ordered_item.dart';
-import '../ReusableComponents/menu_card.dart';
+import '../widgets/menu_card.dart';
 import 'check_out_screen.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -29,14 +30,14 @@ class _MyHomePageState extends State<MyHomePage> {
             'BREAKFAST',
             style: Styles.headerOneTextStyle,
           ),
-          toolbarHeight: 45,
-          actions: const [
+          toolbarHeight: 45.h,
+          actions: [
             Icon(
               Icons.search,
-              size: 35,
+              size: 35.w,
             ),
             SizedBox(
-              width: 20,
+              width: 20.h,
             )
           ],
           bottom: const TabBar(
@@ -81,11 +82,11 @@ class _MyHomePageState extends State<MyHomePage> {
           TabData(listItems: menuList6),
         ]),
         floatingActionButton: SizedBox(
-          width: 60,
-          height: 60,
+          width: 60.w,
+          height: 60.w,
           child: FloatingActionButton(
             backgroundColor:
-                itemCountNumber > 0 ? Color(0xffBCC536) : Colors.white70,
+                itemCountNumber > 0 ? const Color(0xffBCC536) : Colors.white70,
             onPressed: () {
               if (itemCountNumber > 0) {
                 Navigator.of(context).push(
@@ -115,24 +116,24 @@ class _MyHomePageState extends State<MyHomePage> {
                       );
                     }
                   },
-                  child: const Icon(
+                  child: Icon(
                     Icons.shopping_bag_outlined,
-                    size: 38,
+                    size: 38.w,
                   ),
                 ),
                 Padding(
-                  padding: const EdgeInsets.only(left: 9, top: 13),
+                  padding: EdgeInsets.only(left: 9.w, top: 13.h),
                   child: CircleAvatar(
-                    radius: 10.0,
+                    radius: 10.w,
                     backgroundColor: Colors.transparent,
                     foregroundColor: Colors.black,
                     child: itemCountNumber > 0
                         ? Text(
                             itemCountNumber.toString(),
-                            style: const TextStyle(
-                              fontWeight: FontWeight.bold,
-                              fontSize: 15.0,
-                            ),
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                fontSize: 15.sp,
+                                color: Colors.red),
                           )
                         : const Text(''),
                   ),
@@ -155,20 +156,20 @@ class TabData extends StatelessWidget {
     return Container(
       color: const Color(0xffD8DFDF),
       child: ListView(
-        padding: const EdgeInsets.symmetric(
-          horizontal: 5,
-          vertical: 10,
+        padding: EdgeInsets.symmetric(
+          horizontal: 5.w,
+          vertical: 10.h,
         ),
         children: [
           Column(
             children: [
-              const SizedBox(height: 10),
+              SizedBox(height: 10.h),
               Column(
                 children: listItems
                     .map((foodinfo) => MenuCard(menuData: foodinfo))
                     .toList(),
               ),
-              const SizedBox(height: 10)
+              SizedBox(height: 10.h)
             ],
           ),
         ],

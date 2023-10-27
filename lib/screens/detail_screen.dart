@@ -53,7 +53,7 @@ class _DetailScreenState extends State<DetailScreen> {
                             onTap: () {
                               Navigator.pop(context);
                             },
-                            child: CircleAvatar(
+                            child: const CircleAvatar(
                               backgroundColor: Colors.white,
                               radius: 20,
                               child: Icon(
@@ -74,7 +74,7 @@ class _DetailScreenState extends State<DetailScreen> {
                       mainAxisAlignment: MainAxisAlignment.start,
                       children: [
                         Text(
-                          '${widget.detailInfo['name'].toString()}',
+                          widget.detailInfo['name'].toString(),
                           style: Styles.headerOneTextStyle,
                           textAlign: TextAlign.start,
                         ),
@@ -129,7 +129,7 @@ class _DetailScreenState extends State<DetailScreen> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Text('Quality', style: Styles.linkText),
+                            const Text('Quality', style: Styles.linkText),
                             const SizedBox(
                               width: 30,
                             ),
@@ -178,7 +178,7 @@ class _DetailScreenState extends State<DetailScreen> {
                         child: Center(
                           child: DropdownButtonFormField<String>(
                             decoration:
-                                InputDecoration(border: InputBorder.none),
+                                const InputDecoration(border: InputBorder.none),
                             value: selectedValue,
                             onChanged: (newValue) {
                               setState(() {
@@ -207,9 +207,9 @@ class _DetailScreenState extends State<DetailScreen> {
                   const SizedBox(
                     height: 5,
                   ),
-                  Padding(
+                  const Padding(
                     padding:
-                        const EdgeInsets.symmetric(horizontal: 30, vertical: 8),
+                        EdgeInsets.symmetric(horizontal: 30, vertical: 8),
                     child: Row(
                       children: [
                         AddingComponetes(),
@@ -224,7 +224,7 @@ class _DetailScreenState extends State<DetailScreen> {
                     height: 25,
                   ),
                   Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 20),
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
                     child: MaterialButton(
                       padding: const EdgeInsets.symmetric(
                           vertical: 15, horizontal: 55),
@@ -277,7 +277,7 @@ class AddingComponetes extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(top: 8, left: 4, right: 4, bottom: 8),
+      padding: const EdgeInsets.only(top: 8, left: 4, right: 4, bottom: 8),
       height: 50,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(0),
@@ -291,7 +291,7 @@ class AddingComponetes extends StatelessWidget {
           children: [
             Row(
               children: [
-                CircleAvatar(
+                const CircleAvatar(
                   backgroundColor: Styles.buttonBgColor,
                   radius: 10,
                   child: Icon(
@@ -300,14 +300,14 @@ class AddingComponetes extends StatelessWidget {
                     size: 18,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 8,
                 ),
                 Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    const Text(
                       'Add Suger',
                       style: TextStyle(
                           fontWeight: FontWeight.bold,
@@ -320,7 +320,7 @@ class AddingComponetes extends StatelessWidget {
                           '\$125',
                           style: TextStyle(color: Colors.grey[700]),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 5,
                         ),
                         Text(

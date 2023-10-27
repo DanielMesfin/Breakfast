@@ -1,4 +1,4 @@
-import 'package:breakfast/ReusableComponents/divider.dart';
+import 'package:breakfast/widgets/divider.dart';
 import 'package:flutter/material.dart';
 import 'package:breakfast/constances/Styes.dart';
 import 'package:provider/provider.dart';
@@ -18,7 +18,7 @@ class _CheckOutItemOrderedState extends State<CheckOutItemOrdered> {
   Widget build(BuildContext context) {
     int? selectedNumber = widget.menuData['amount'];
     return Container(
-      color: Color(0xffD8DFDF),
+      color: const Color(0xffD8DFDF),
       height: 100,
       child: Column(
         children: [
@@ -74,7 +74,7 @@ class _CheckOutItemOrderedState extends State<CheckOutItemOrdered> {
                         padding: const EdgeInsets.all(3.0),
                         child: Text(
                           '${index + 1}',
-                          style: TextStyle(decoration: TextDecoration.none),
+                          style: const TextStyle(decoration: TextDecoration.none),
                           textAlign: TextAlign.center,
                         ),
                       ),
@@ -102,7 +102,7 @@ class _CheckOutItemOrderedState extends State<CheckOutItemOrdered> {
               ),
             ],
           ),
-          DividerLine()
+          const DividerLine()
         ],
       ),
     );
